@@ -3,17 +3,19 @@
 ##--Michael duPont
 ##--controller.py : Network iBeacon Updater
 ##--Update networked beacon values from a CSV file
-##--2015-08-13
+##--2015-08-14
 
 import socket
 
 portNum = 9475
+timeout = 5
 
 #Send a formatted itemList to a given ip:port and returns '1' is successful
 def sendPacketItems(ip , port , itemList):
 	try:
 		print(ip)
 		with socket.socket() as client:
+			client.settimeout(timeout)
 			client.connect((ip , port))
 			sendBytes = '&'.join(itemList).encode('utf-8')
 			client.send(sendBytes)

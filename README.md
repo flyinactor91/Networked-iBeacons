@@ -3,6 +3,8 @@ iBeacons whose values can be updated remotely by a controller
 
 The beacon.py code has been tested simultaneously on a Pi and Edison being updated by controller.py, but it should work on any system that implements BlueZ.
 
+[Video Demonstration](https://www.youtube.com/watch?v=XDeJwOefse8)
+
 ## Setup
 
 To install BlueZ on the Pi and most Linux distros, follow this [guide at Adafruit](https://learn.adafruit.com/pibeacon-ibeacon-with-a-raspberry-pi/setting-up-the-pi). You'll also need a generic BLE USB dongle.

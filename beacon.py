@@ -3,7 +3,7 @@
 ##--Michael duPont
 ##--beacon.py : Network-Connected iBeacon
 ##--Uses Bluez and sockets to create an iBeacon whose values can be updated remotely
-##--2015-08-13
+##--2015-08-14
 
 #If on Raspberry Pi or other Linux/Debian distro, make sure Linux-bluetooth and bluez is installed
 #https://learn.adafruit.com/pibeacon-ibeacon-with-a-raspberry-pi/setting-up-the-pi
@@ -80,6 +80,7 @@ class iBeacon:
 def loadBeaconData(filename):
 	with open(filename , 'r') as fin:
 		data = fin.read().split(',')
+		global cid , aid , uid , power
 		cid = data[0]
 		aid = data[1]
 		uid = data[2]
